@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "5CqDiYvPCuYafCpAIOmToU8hd8xKn1ruBrfY+SHKgLg=",
+  "Source": "EncodeSA.Dao",
+  "BasePath": "_content/EncodeSA.Dao",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "/root/RiderProjects/EncodeSA/EncodeSA.Models/EncodeSA.Models.csproj",
+      "Version": 2,
+      "Source": "EncodeSA.Models",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
