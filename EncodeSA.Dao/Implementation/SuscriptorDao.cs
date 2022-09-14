@@ -98,8 +98,8 @@ public class SuscriptorDao : ISuscriptorDao
  */
     public Suscriptor ActualizarSuscriptor(Suscriptor suscriptor, string tipoDocumento, int numeroDocumento)
     {
-        var susc=_context.Suscriptor.FromSqlRaw("Select * from Suscriptor INNER JOIN Tipo on Tipo.id=Suscriptor.s_id where  Suscriptor.NumeroDocumento={0}",numeroDocumento).Include(x=>x.TipoDoc).Include(l=>l.Suscripcion).FirstOrDefault();
-      
+        //var susc=_context.Suscriptor.FromSqlRaw("Select * from Suscriptor INNER JOIN Tipo on Tipo.id=Suscriptor.s_id where  Suscriptor.NumeroDocumento={0}",numeroDocumento).Include(x=>x.TipoDoc).Include(l=>l.Suscripcion).FirstOrDefault();
+        var susc = _context.Suscriptor.Include(x=>x.TipoDoc).Include(l=>l.Suscripcion).FirstOrDefault(x=>x.NumeroDocumento== numeroDocumento );
         if (suscriptor.NumeroDocumento == susc.NumeroDocumento)
         {
             susc.Nombre = suscriptor.Nombre;
@@ -130,5 +130,23 @@ public class SuscriptorDao : ISuscriptorDao
         _context.SaveChanges();
         return "Suscriptor eliminado";
     }
-    
+
+    public Suscriptor Suscribir(Suscripcion suscripcion,string tipoDocumento, int numeroDocumento)
+    {
+        //var susc = _context.Suscriptor.Include(x => x.TipoDoc).Include(l => l.Suscripcion).FirstOrDefault(x => x.s_Id == suscripcion.Id);
+        var susc = _context.Suscriptor.Include(x=>x.TipoDoc).Include(l=>l.Suscripcion).FirstOrDefault(x=>x.NumeroDocumento== numeroDocumento );
+        if (susc != null)
+        {
+            
+           // susc.Suscripcion.Id = susc2.Id;
+            susc.Suscripcion.FechaAlta = DateTime.Now.ToString();
+            _context.Update(susc);
+            _context.SaveChanges();
+            return susc;
+        }
+        else
+        {
+            return null;
+        }
+    }
 }

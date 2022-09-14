@@ -11,4 +11,6 @@ public interface ISuscriptorDao
 
     public List<Suscriptor> getAll();
     public string BorrarSuscriptor(int id);
+
+    public Suscriptor Suscribir(Suscripcion suscripcion,string tipoDocumento, int numeroDocumento);
 }

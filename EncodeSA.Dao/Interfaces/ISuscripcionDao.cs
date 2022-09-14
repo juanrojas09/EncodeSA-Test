@@ -8,6 +8,6 @@ public interface ISuscripcionDao
     
     public Suscripcion save(Suscripcion suscripcion);
     public Suscripcion update(Suscripcion suscripcion);
-    public void delete(Suscripcion suscripcion);
+    public void delete(int id);
     
 }
