@@ -12,7 +12,7 @@ public class Suscriptor
     public int NumeroDocumento { get; set; }
     public Tipo TipoDoc { get; set; }
     public string Direccion { get; set; }
-    public int Telefono { get; set; }
+    public string Telefono { get; set; }
     public string Email { get; set; }
     public string NombreUsuario { get; set; }
     public string Password { get; set; }
