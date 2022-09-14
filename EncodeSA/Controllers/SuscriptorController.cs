@@ -54,5 +54,12 @@ public class SuscriptorController : ControllerBase
           return _suscriptorBuisness.getall();
        }
        
+       [HttpPost("suscriptor/Suscribir")]
+         public Suscriptor Suscribir(Suscripcion suscripcion,string tipoDocumento,int numeroDocumento)
+         {
+            return _suscriptorBuisness.suscribir(suscripcion,tipoDocumento,numeroDocumento);
+         }
+       
+       
 
     }

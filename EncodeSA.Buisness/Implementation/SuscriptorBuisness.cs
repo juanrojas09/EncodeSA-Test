@@ -130,4 +130,23 @@ public class SuscriptorBuisness : ISuscriptorBuisness
             throw ex;
         }
     }
+
+    public Suscriptor suscribir(Suscripcion suscripcion,string tipoDocumento, int numeroDocumento)
+    {
+        try
+        {
+            var Susc= _suscriptorRepository.Suscribir(suscripcion, tipoDocumento, numeroDocumento);
+            if ( Susc == null )
+            {
+                throw new ServiceExceptions("No Fue posible suscribir el suscriptor");
+            }
+            return Susc;
+
+        }
+        catch (ServiceExceptions ex)
+        {
+            _logger.LogCritical(ex.Message);
+            throw ex;
+        }
+    }
 }

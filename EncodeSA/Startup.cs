@@ -11,6 +11,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 
+
+
 namespace EncodeSA;
 
 public  class Startup
@@ -45,8 +47,10 @@ public  class Startup
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddTransient<ISuscriptorBuisness, SuscriptorBuisness>();
-
+            builder.Services.AddTransient<ISuscripcionBuisness, SuscripcionBuisness>();
             builder.Services.AddTransient<ISuscriptorDao, SuscriptorDao>();
+            builder.Services.AddTransient<ISuscripcionDao, SuscripcionDao>();
+           
             
 
             services.AddCors();

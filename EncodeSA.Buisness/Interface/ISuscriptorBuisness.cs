@@ -11,5 +11,6 @@ public interface ISuscriptorBuisness
 
 public List<Suscriptor> getall();
     public string Borrarsuscriptor(int id);
+    public Suscriptor suscribir(Suscripcion suscripcion,string tipoDocumento, int numeroDocumento);
     
 }
